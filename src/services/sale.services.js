@@ -16,4 +16,7 @@ const getSales = async (productSale) => {
   return { result: { id, itemsSold: productSale } };
 };
 
-module.exports = { getSales };
+const findAllSale = async () => ({ message: await models.saleModel.allSales() });
+const findByIdSale = async (productId) => ({ message: await models.saleModel.saleById(productId) });
+
+module.exports = { getSales, findAllSale, findByIdSale };
